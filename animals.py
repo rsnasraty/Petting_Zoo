@@ -1,5 +1,8 @@
 # import the python datetime module to help us create a timestamp
 from datetime import date
+from attractions import SnakePit
+from attractions import PettingZoo
+from attractions import Wetlands
 
 # 1
 
@@ -17,12 +20,13 @@ class Hognose_Snake:
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on   {date.today().strftime("%m/%d/%Y")}.')
+
     def __str__(self):
         return f"{self.name} is a {self.species}"
 
 snakey = Hognose_Snake("Snakey","Hognose Snake", "Mice")
 print(snakey)
-print(snakey.feed())
+snakey.feed()
 
 # 2
 
@@ -44,7 +48,7 @@ class Cobra:
 
 mister_cobra = Cobra("Mister Cobra", "Cobra", "Mice")
 print(mister_cobra)
-print(mister_cobra.feed())
+mister_cobra.feed()
 
 # 3
 
@@ -67,7 +71,7 @@ class Python:
 
 monty = Python("Monty", "Python", "Mice")
 print(monty)
-print(monty.feed())
+monty.feed()
 
 # 4
 
@@ -89,7 +93,7 @@ class Boa_Constrictor:
         return f"{self.name} is a {self.species}"
 b_sizzle = Boa_Constrictor("B-Sizzle", "Boa Constrictor", "Mice")
 print(b_sizzle)
-print(b_sizzle.feed())
+b_sizzle.feed()
 
 # 5
 
@@ -111,7 +115,8 @@ class Corn_Snake:
         return f"{self.name} is a {self.species}"
 chip = Corn_Snake("Chip", "Corn Snake", "Mice")
 print(chip)
-print(chip.feed())
+chip.feed()
+
 
 # 6
 
@@ -135,7 +140,8 @@ class Emu:
 googles = Emu("Googles", "Emu", "morning", "Emu Chow")
 print(f'{googles.name} the {googles.species} is available to pet during the {googles.shift} shift.')
 print(googles)
-print(googles.feed())
+googles.feed()
+
 # 7
 
 
@@ -347,3 +353,37 @@ class Goose:
 untitled = Goose("Untitled", "Goose", "Bread")
 print(untitled)
 print(untitled.feed())
+
+
+
+critter_cove = Wetlands ("Wetlands", " Gatlinburg's only one-acre walk-through wetlands and wet bar, full of feathered friends and fantastic fish!")
+
+critter_cove.add_animals(quackers)
+critter_cove.add_animals(goldeen)
+critter_cove.add_animals(odette)
+critter_cove.add_animals(jinli)
+
+slither_inn = SnakePit("Slither Inn", "more snakes than an Indiana Jones movie ")
+
+slither_inn.add_animals(snakey)
+slither_inn.add_animals(mister_cobra)
+slither_inn.add_animals(monty)
+slither_inn.add_animals(b_sizzle)
+slither_inn.add_animals(chip)
+
+
+varmint_village = PettingZoo("Varmint Village", "a petting zoo filled with your favorite animals")
+
+varmint_village.add_animals(kuzco)
+varmint_village.add_animals(shrek)
+varmint_village.add_animals(googles)
+
+
+for animal in varmint_village.animals:
+    print(f'You can find {animal.name} the {animal.species} in {varmint_village.attraction_name}')
+
+for animal in slither_inn.animals:
+    print(f'You can find {animal.name} the {animal.species} in {slither_inn.attraction_name}')
+
+for animal in critter_cove.animals:
+    print(f'You can find {animal.name} the {animal.species} in {critter_cove.attraction_name}')
