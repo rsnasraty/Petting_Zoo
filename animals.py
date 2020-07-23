@@ -9,7 +9,7 @@ from attractions import Wetlands
 
 class Hognose_Snake:
 
-    def __init__(self, name, species, food):
+    def __init__(self, name, species, food, chip_num):
         # Establish the properties of each animal
         # with a default value
         self.name = name
@@ -17,6 +17,16 @@ class Hognose_Snake:
         self.date_added = date.today()
         self.slithering = True
         self.food = food
+        self.__chip_number = chip_num
+
+    @property
+    def chip_number(self):
+        return self.__chip_number
+
+    @chip_number.setter # The setter
+    def chip_number(self, num):
+        pass
+
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on   {date.today().strftime("%m/%d/%Y")}.')
@@ -132,6 +142,9 @@ class Emu:
         self.walking = True
         self.shift = shift
         self.food = food
+
+
+
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
