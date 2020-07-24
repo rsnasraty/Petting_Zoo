@@ -44,7 +44,7 @@ class Hognose_Snake(Animal):
         pass
 
     def feed(self):
-        print(f'{self.name} was fed {self.food} on   {date.today().strftime("%m/%d/%Y")}.')
+        print(f'{self.name} was fed a light serving of {self.food} on   {date.today().strftime("%m/%d/%Y")}.')
 
     def __str__(self):
         return f"{self.name} is a {self.species}"
@@ -154,7 +154,7 @@ class Llama:
         self.walking = True
 
     def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
+        print(f'on {date.today()}, {self.name} had "Rockytop" sung to it so it would eat its {self.food}')
     def __str__(self):
         return f"{self.name} is a {self.species}"
 kuzco = Llama("Kuzco", "Llama", "Afternoon", "Fruit")
