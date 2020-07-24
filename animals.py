@@ -4,20 +4,36 @@ from attractions import SnakePit
 from attractions import PettingZoo
 from attractions import Wetlands
 
+class Animal:
+    def __init__(self, name, species, food, chip_num):
+        self.name = name
+        self.species = species
+        self.food = food
+        self.__chip_number = chip_num
+        self.date_added = date.today()
+
+    def feed(self):
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
+    
+    @property
+    def chip_number(self):
+        return self.__chip_number
+    
+    @chip_number.setter
+    def chip_number(self, num):
+        pass
+
+
+
+
 # 1
 
 
-class Hognose_Snake:
+class Hognose_Snake(Animal):
 
     def __init__(self, name, species, food, chip_num):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
-        self.__chip_number = chip_num
 
     @property
     def chip_number(self):
@@ -26,7 +42,6 @@ class Hognose_Snake:
     @chip_number.setter # The setter
     def chip_number(self, num):
         pass
-
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on   {date.today().strftime("%m/%d/%Y")}.')
@@ -42,14 +57,9 @@ snakey.feed()
 
 class Cobra:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -65,14 +75,9 @@ mister_cobra.feed()
 
 class Python:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -88,14 +93,9 @@ monty.feed()
 
 class Boa_Constrictor:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -110,14 +110,9 @@ b_sizzle.feed()
 
 class Corn_Snake:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.slithering = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -133,17 +128,10 @@ chip.feed()
 
 class Emu:
 
-    def __init__(self, name, species, shift, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift 
         self.walking = True
-        self.shift = shift
-        self.food = food
-
-
 
 
     def feed(self):
@@ -160,15 +148,10 @@ googles.feed()
 
 class Llama:
 
-    def __init__(self, name, species, shift, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift 
         self.walking = True
-        self.shift = shift
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -186,15 +169,10 @@ print(kuzco.feed())
 
 class Donkey:
 
-    def __init__(self, name, species, shift, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift 
         self.walking = True
-        self.shift = shift
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -210,15 +188,10 @@ print(shrek.feed())
 
 class Goat:
 
-    def __init__(self, name, species, shift, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift 
         self.walking = True
-        self.shift = shift
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -234,15 +207,10 @@ print(billy.feed())
 
 class Zebra:
 
-    def __init__(self, name, species, shift, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, food, chip_num)
+        self.shift = shift 
         self.walking = True
-        self.shift = shift
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -259,14 +227,9 @@ print(z_man.feed())
 
 class Mallard:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -279,14 +242,9 @@ print(quackers.feed())
 #12
 class Goldfish:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -302,14 +260,9 @@ print(goldeen.feed())
 
 class Swan:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -325,14 +278,9 @@ print(odette.feed())
 
 class Koi:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
@@ -348,14 +296,9 @@ print(jinli.feed())
 
 class Goose:
 
-    def __init__(self, name, species, food):
-        # Establish the properties of each animal
-        # with a default value
-        self.name = name
-        self.species = species
-        self.date_added = date.today()
+    def __init__(self, name, species, food, chip_num):
+        super().__init__(name, species, food, chip_num)
         self.swimming = True
-        self.food = food
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}.')
